@@ -13,7 +13,8 @@
                 name="nombre" 
                 [ngModel]="usuario.nombre"
                 [class.is-invalid]="nombre.invalid && nombre.touched" 
-                required #nombre="ngModel" 
+                required 
+                #nombre="ngModel" 
                 minlength="4">
                 <small class="form-text text-danger" *ngIf="nombre.invalid && nombre.touched">Ingrese su nombre!</small>
             </div>
@@ -45,7 +46,7 @@
                 [class.is-invalid]="correo.invalid && correo.touched" 
                 required
                 #correo="ngModel" 
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                pattern="[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*@[a-zA-Z0-9_]+([.][a-zA-Z0-9_]+)*[.][a-zA-Z]{1,5}">
                <small class="form-text text-danger" *ngIf="correo.invalid && correo.touched">Ingrese un correo
                 valido!</small>
         </div>
